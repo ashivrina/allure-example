@@ -10,6 +10,7 @@ import static io.qameta.allure.Allure.parameter;
 @Layer("rest")
 @Owner("baev")
 @Feature("Issues")
+@JiraIssue("HOMEWORK-271")
 public class IssuesRestTest {
 
     private static final String OWNER = "allure-framework";
@@ -36,7 +37,6 @@ public class IssuesRestTest {
     @Story("Close existing issue")
     @Microservice("Repository")
     @Tags({@Tag("web"), @Tag("regress")})
-    @JiraIssues({@JiraIssue("AE-1")})
     @ParameterizedTest(name = "Close issue via api")
     @ValueSource(strings = {"First Note", "Second Note"})
     public void shouldDeleteUserNote(String title) {
